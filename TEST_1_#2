@@ -4,13 +4,13 @@
 #include <cmath>
 using namespace std;
 int main() {
-    double n, summ=0, col, chis, sra, a;
+    double n, summ=0, chis, sred, a;
     cin >> a;
     for (n=1; n<=a; n++) {
         cin >> chis;
         summ += chis;
     }
-    sra = summ / a;
-    cout << fixed << setprecision(10) << sra << endl;
+    sred = summ / a;
+    cout << fixed << setprecision(10) << sred << endl;
     system("pause");
 }
