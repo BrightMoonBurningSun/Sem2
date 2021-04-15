@@ -1,0 +1,65 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+int min(int a[], int n)
+
+{
+    int diff = INT_MAX;
+    int q = 0;
+    int p = 0;
+    for (int i=0; i<n-1; i++)
+        for (int j=i+1; j<n; j++)
+            if (abs(a[i] - a[j]) < diff){
+                diff = abs(a[i] - a[j]);
+            }
+    return diff;
+}
+
+int minq(int a[], int n)
+
+{
+    int diff = INT_MAX;
+    int q = 0;
+    int p = 0;
+    for (int i=0; i<n-1; i++)
+        for (int j=i+1; j<n; j++)
+            if (abs(a[i] - a[j]) < diff){
+                diff = abs(a[i] - a[j]);
+                q = i;
+            }
+    return q;
+}
+
+int minp(int a[], int n)
+
+{
+    int diff = INT_MAX;
+    int q = 0;
+    int p = 0;
+    for (int i=0; i<n-1; i++)
+        for (int j=i+1; j<n; j++)
+            if (abs(a[i] - a[j]) < diff){
+                diff = abs(a[i] - a[j]);
+                p = j;
+            }
+    return p;
+}
+
+int main()
+{
+    int n, k;
+    cin >> n;
+    int a[n];
+    for (k=1; k<=n; k++) {
+        cin >> a[k];
+    }
+    cout << fixed << setprecision(10) << min(a, n) << endl;
+    cout << fixed << setprecision(10) << minp(a, n) << endl;
+    cout << fixed << setprecision(10) << minq(a, n) << endl;
+    return 0;
+}
