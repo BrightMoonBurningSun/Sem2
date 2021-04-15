@@ -1,0 +1,31 @@
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+double sred(int a[], int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+        sum += a[i];
+    return (double)sum/(double)n;
+}
+double med(int a[], int n) {
+    sort(a, a + n);
+    if (n % 2 != 0)
+        return (double) a[n / 2];
+    return (double) (a[(n + 1)/ 2] + a[n / 2]) / 2.0;
+}
+int main()
+{
+    int n, k;
+    cin >> n;
+    int a[n];
+    for (k=1; k<=n; k++) {
+        cin >> a[k];
+    }
+    cout << fixed << setprecision(10) << med(a, n) << endl;
+    return 0;
+}
